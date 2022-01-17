@@ -18,4 +18,8 @@ public class ServiceCustomer {
         List<Customer> customers = customerRepository.findAll();
         return customers;
     }
+
+    public void save(Customer customer) {
+        customerRepository.save(customer);
+    }
 }

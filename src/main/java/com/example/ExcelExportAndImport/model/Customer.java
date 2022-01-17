@@ -1,5 +1,6 @@
 package com.example.ExcelExportAndImport.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,9 +11,10 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String firstName;
     private String lastName;
+    @Column(name = "cin", unique = true)
     private String cin;
 
     public Customer() {
@@ -20,16 +22,17 @@ public class Customer {
     }
 
     public Customer(String firstName, String lastName, String cin) {
+        // this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.cin = cin;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

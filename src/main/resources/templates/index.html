@@ -22,7 +22,14 @@
 
     <div class="container">
         <a th:href="@{/excelExport}" class="btn btn-outline-danger mt-5 mb-2">Export Date</a>
-        <a class="btn btn-outline-success mt-5 mb-2">Import Date</a>
+        <form class="form-check-inline mt-5" th:action="@{/import-excel}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" class="form-control" value="chose file do u want import data">
+            </div>
+            <input type="submit" value="Import Data" class="btn btn-outline-success mt-2">
+        </form>
+
+
         <table class="table table-striped">
             <thead>
                 <tr>
